@@ -12,7 +12,7 @@
 * Shows current status of your server in a channel of your choice "updates".
 
 # Installation
-Clone this repo and edit the index.js file adding your server IP / Port you want to listen for, BOTS client login ID, Channel ID's and your ID for the BOT to DM you. This is all commented for you within the code.
+Clone this repo and edit the config file.
 
 # Usage
 Once you have edited the code you can simply run it using node index.js
