@@ -1,0 +1,7 @@
+{ 
+    "token":"bot-token",
+    "serverip":"servers-ip", 
+    "serverport":"servers-port", 
+    "channelid":"channel-ID-for-notifications",
+    "yourid":"your-discord-id"
+ }
