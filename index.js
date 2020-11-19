@@ -1,15 +1,22 @@
 const Discord = require("discord.js");
 const Client = new Discord.Client();
 const DBL = require("dblapi.js");
+var fs = require('fs')
 //Logins the bot to discord
-Client.login("CLIENT_ID");
+
+var data = fs.readFileSync('config.txt', 'utf8');
+const config = JSON.parse(data); 
+console.log(config.serverip)
+
+Client.login(config.token);
+
 
 var net = require('net');
 //Sets Server IP and port to ping
-var hosts = [['IP', PORT]];
+var hosts = [[config.serverip, config.serverport]];
 Client.on('ready', async message=>{
     //Sends an editable message that will change depending on your server status 
-  const msg = Client.channels.cache.get('CHANNEL_ID').send("Getting Server Status ...").then((msg)=>{
+  const msg = Client.channels.cache.get(config.channelid).send("Getting Server Status ...").then((msg)=>{
 function intervalFunc() {
     hosts.forEach(function(item) {
         var sock = new net.Socket();
@@ -29,7 +36,7 @@ function intervalFunc() {
             //Edits the message
             msg.edit('Website is Offline ❌')
             //Sends message to user to tell them server is offline
-            Client.users.cache.get('YOUR_ID').send('Website is Offline ❌');
+            Client.users.cache.get(config.yourid).send('Website is Offline ❌');
 
             //SERVER TIMEOUT
         }).on('timeout', function(e) {
@@ -38,7 +45,7 @@ function intervalFunc() {
             //Edits the message
             msg.edit('Website is Offline ❌')
             //Sends message to user to tell them server is offline
-            Client.users.cache.get('YOUR_ID').send('Website is Offline ❌');
+            Client.users.cache.get(config.yourid).send('Website is Offline ❌');
         }).connect(item[1], item[0]);
     });
   }
