@@ -9,9 +9,9 @@ console.log(config.serverip);
 //Logins the bot to discord
 Client.login(config.token);
 
-var net = require("net");
+const net = require("net");
 //Sets Server IP and port to ping
-var hosts = [[config.serverip, config.serverport]];
+const hosts = [config.serverip, config.serverport];
 Client.on("ready", async (message) => {
   //Sends an editable message that will change depending on your server status
   const msg = Client.channels.cache
