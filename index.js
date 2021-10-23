@@ -1,12 +1,12 @@
 const Discord = require("discord.js");
 const Client = new Discord.Client();
-var fs = require("fs");
-//Logins the bot to discord
+const fs = require("fs");
 
 var data = fs.readFileSync("config.txt", "utf8");
 const config = JSON.parse(data);
 console.log(config.serverip);
 
+//Logins the bot to discord
 Client.login(config.token);
 
 var net = require("net");
