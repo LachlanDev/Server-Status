@@ -1,0 +1,30 @@
+{
+  "name": "server-status",
+  "version": "1.0.0",
+  "description": "A Discord BOT / Node JS Application that send notifications if your server (website) goes offline, also shows current status in a desired channel.",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "net": "^1.0.2",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zaid-maker/Server-Status.git"
+  },
+  "keywords": [
+    "server",
+    "status",
+    "bot",
+    "discord"
+  ],
+  "author": "LachlanDev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LachlanDev/Server-Status/issues"
+  },
+  "homepage": "https://github.com/LachlanDev/Server-Status#readme"
+}
